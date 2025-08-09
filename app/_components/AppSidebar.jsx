@@ -45,9 +45,9 @@ const AppSidebar = () => {
         <Sidebar>
             <SidebarHeader className='bg-accent flex items-center justify-center py-5'>
                 <Image 
-                    src="/logo.png" 
+                    src="/logo.svg" 
                     alt="logo" 
-                    width={200} 
+                    width={50} 
                     height={100} 
                     className="object-contain" 
                     priority 

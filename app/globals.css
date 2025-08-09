@@ -136,6 +136,10 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+.modern-gradient {
+  background: linear-gradient(180deg, #0505aecf 0%, #C13B5A 40%, #7b3fe44c 80%, #F4F2EA 100%);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
