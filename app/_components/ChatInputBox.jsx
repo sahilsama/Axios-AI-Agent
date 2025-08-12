@@ -1,5 +1,14 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Atom, AudioLines, Cpu, FileSearch2, Globe, LucideBadgeRussianRuble, Mic, Paperclip, Pin, ReceiptSwissFranc, SearchCheckIcon, SearchCode, SearchCodeIcon, SplitSquareVertical } from "lucide-react";
+import { SearchParamsContext } from "next/dist/shared/lib/hooks-client-context.shared-runtime";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 const ChatInputBox = () => {
   return (
@@ -10,20 +19,20 @@ const ChatInputBox = () => {
         {/* Input */}
         
 
-        <div>
+        <div className="flex justify-between items-center">
 
 
         {/* Tabs inside same box */}
-            <Tabs defaultValue="account" className="w-full ">
+            <Tabs defaultValue="Search" className="w-full ">
 
-            <TabsContent value="account">
+            <TabsContent value="Seach">
                 <input
                     type="text"
                     placeholder="Ask Anything"
-                    className="w-full p-2  outline-none"
+                    className="w-full p-2 outline-none"
                 />
             </TabsContent>
-            <TabsContent value="password">
+            <TabsContent value="Reseacrh">
                 <input
                     type="text"
                     placeholder="Research Anything"
@@ -32,12 +41,29 @@ const ChatInputBox = () => {
             </TabsContent>
 
             <TabsList>
-                <TabsTrigger value="account">Search</TabsTrigger>
-                <TabsTrigger value="password">Research</TabsTrigger>
+                <TabsTrigger value="Search" className={'text-primary'}><SearchCodeIcon/>Search </TabsTrigger>
+                <TabsTrigger value="Reseacrh" className={'text-primary'}> <Atom/> Research</TabsTrigger>
             </TabsList>
 
             
             </Tabs>
+
+            {/* label box or right icons */}
+            <div className="flex ">
+                <Cpu/>
+                <Globe/>
+                <Paperclip/>
+                <Mic/>
+                <AudioLines/>
+
+                
+
+
+
+            </div>
+
+
+
         </div>
       </div>
     </div>
