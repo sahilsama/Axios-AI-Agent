@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Search, Home, Compass, Library, LogIn } from 'lucide-react'
+import { Home, Compass, Library, LogIn } from 'lucide-react'
 import { Button } from "@/components/ui/button" // Added missing Button import
 
 const MenuOptions = [
