@@ -12,8 +12,9 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Home, Compass, Library, LogIn } from 'lucide-react'
+import { Home, Compass, Library, LogIn, Outdent, OutdentIcon, LogOut } from 'lucide-react'
 import { Button } from "@/components/ui/button" // Added missing Button import
+import { SignOutButton, SignUpButton, UserButton, useUser } from '@clerk/nextjs'
 
 const MenuOptions = [
     {
@@ -31,15 +32,11 @@ const MenuOptions = [
         icon: Library,
         path: '/library' // Changed to lowercase for consistency
     },
-    {
-        title: 'Sign In',
-        icon: LogIn,
-        path: '/sign-in' // Changed to kebab-case for better URL format
-    },
 ]
 
 const AppSidebar = () => {
     const path = usePathname();
+    const { user } = useUser();
     
     return (
         <Sidebar>
@@ -71,7 +68,15 @@ const AppSidebar = () => {
                         ))}
                     </SidebarMenu>
 
-                    <Button className='rounded-full mx-5 mt-6'>Sign Up</Button>
+                       {!user? <SignUpButton mode='modal'>
+                                <Button className='rounded-full mx-5 mt-6'>Sign Up</Button>
+
+                        </SignUpButton> :
+                        <SignOutButton>
+                            <Button className='rounded-full mx-5 mt-6'> Log Out<LogOut></LogOut></Button>
+                        </SignOutButton>}
+                
+                
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter className='bg-gradient-to-b from-[#F4F2EA] to-[#D2D1CB] border border-black'>
@@ -84,8 +89,14 @@ const AppSidebar = () => {
                                 <path d="M7 7h10v10"/>
                                 <path d="M7 17 17 7"/>
                             </svg>
+                            
                         </button>
                     </div>
+                    {/* {profile} */}
+                    <div className=" mt-auto bg-beige  flex justify-center py-4 border-t border-black">
+                            <UserButton />
+                    </div>
+
                 </SidebarFooter>
         </Sidebar>
     )
