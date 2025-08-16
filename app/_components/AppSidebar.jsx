@@ -12,8 +12,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Home, Compass, Library, LogIn, Outdent, OutdentIcon, LogOut } from 'lucide-react'
-import { Button } from "@/components/ui/button" // Added missing Button import
+import { Home, Compass, Library, LogOut } from 'lucide-react'
+import { Button } from "@/components/ui/button"
 import { SignOutButton, SignUpButton, UserButton, useUser } from '@clerk/nextjs'
 
 const MenuOptions = [
@@ -25,12 +25,12 @@ const MenuOptions = [
     {
         title: 'Discover',
         icon: Compass,
-        path: '/discover' // Changed to lowercase for consistency
+        path: '/discover'
     },
     {
         title: 'Library',
         icon: Library,
-        path: '/library' // Changed to lowercase for consistency
+        path: '/library'
     },
 ]
 
@@ -44,8 +44,8 @@ const AppSidebar = () => {
                 <Image 
                     src="/logo.svg" 
                     alt="logo" 
-                    width={50} 
                     height={100} 
+                    width={100} 
                     className="object-contain" 
                     priority 
                 />
@@ -57,7 +57,7 @@ const AppSidebar = () => {
                             <SidebarMenuItem key={index}>
                                 <SidebarMenuButton 
                                     asChild 
-                                    className={`py-6 px-6 hover:font-bold ${path === menu.path ? 'font-bold' : ''}`} // Changed to exact path match
+                                    className={`py-6 px-6 hover:font-bold ${path === menu.path ? 'font-bold' : ''}`}
                                 >
                                     <a href={menu.path} className='flex items-center gap-4'>
                                         <menu.icon className="w-8 h-8" />
@@ -68,15 +68,18 @@ const AppSidebar = () => {
                         ))}
                     </SidebarMenu>
 
-                       {!user? <SignUpButton mode='modal'>
-                                <Button className='rounded-full mx-5 mt-6'>Sign Up</Button>
-
-                        </SignUpButton> :
+                    {!user ? (
+                        <SignUpButton mode='modal'>
+                            <Button className='rounded-full mx-5 mt-6'>Sign Up</Button>
+                        </SignUpButton>
+                    ) : (
                         <SignOutButton>
-                            <Button className='rounded-full mx-5 mt-6'> Log Out<LogOut></LogOut></Button>
-                        </SignOutButton>}
-                
-                
+                            <Button className='rounded-full mx-5 mt-6'>
+                                Log Out
+                                <LogOut className="ml-2 w-4 h-4" />
+                            </Button>
+                        </SignOutButton>
+                    )}
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter className='bg-gradient-to-b from-[#F4F2EA] to-[#D2D1CB] border border-black'>
