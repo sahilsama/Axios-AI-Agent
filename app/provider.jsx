@@ -1,11 +1,14 @@
 "use client"
 import { supabase } from '@/services/Supabase';
 import { useUser } from '@clerk/nextjs'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { UserDetailContext } from './context/UserDetailContext';
+import { User } from 'lucide-react';
 
 const Provider = ({children}) => {
 
     const {user} = useUser();
+     const {userDetail , setuserDetail}= useState();
 
     useEffect( () => {
             user && CreateNewUser();
@@ -33,22 +36,21 @@ const Provider = ({children}) => {
                 },
             ])
             .select();
-
-
-        console.log(data)
+        setuserDetail(data[0]);
+        return ;
         
             
         }
+        setuserDetail(Users[0]);
 
         
 
     }
 
   return (
-    <div className='w-full'>
-        {children}
-      
-    </div>
+      <UserDetailContext.Provider value={{userDetail, setuserDetail}}> 
+      <div className='w-full'> {children} </div>
+      </UserDetailContext.Provider>
   )
 }
 

@@ -1,3 +1,4 @@
+
 # Axios - AI Research Application
 <img width="1354" height="542" alt="image" src="https://github.com/user-attachments/assets/fd609a44-77b6-4cdb-8d98-ed52730dbb75" />
 
@@ -17,6 +18,29 @@ A AI Research bot using OSS models built with Next.js, featuring fetching Real t
 
 - **Tech stack**: Next, React18, Postgres, Clerk for Auth, Supabase DB integration, Nodejs, Npm, Vercel. 
   
+=======
+# Perplexity Clone - AI Chat Application
+
+A modern, full-stack AI chat application built with Next.js, featuring real-time conversations, user authentication, and a beautiful responsive interface.
+
+## 🚀 Features
+
+- **AI-Powered Chat**: Intelligent conversation capabilities with AI models
+- **User Authentication**: Secure sign-in/sign-up with Clerk
+- **Real-time Updates**: Live chat experience with instant message delivery
+- **Responsive Design**: Beautiful UI that works on all devices
+- **Database Integration**: Supabase backend for data persistence
+- **Modern Tech Stack**: Built with Next.js 15 and React 18
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 15, React 18, Tailwind CSS
+- **Authentication**: Clerk
+- **Database**: Supabase
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Deployment**: Vercel
+- **Package Manager**: npm
+>>>>>>> 50b0bd2 (search query database)
 
 ## 📋 Prerequisites
 
@@ -187,6 +211,19 @@ Custom Tailwind configuration is in `tailwind.config.js` with shadcn/ui componen
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+
 ---
 
 **Thanks for reading! 🚀**
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [troubleshooting](#troubleshooting) section
+2. Search existing [GitHub issues](link-to-issues)
+3. Create a new issue with detailed information
+
+---
+
+**Happy Coding! 🚀**

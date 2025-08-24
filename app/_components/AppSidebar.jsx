@@ -42,7 +42,7 @@ const AppSidebar = () => {
         <Sidebar>
             <SidebarHeader className='bg-accent flex items-center justify-center py-5'>
                 <Image 
-                    src="/logo.svg" 
+                    src="/OIP-removebg-preview.png" 
                     alt="logo" 
                     height={100} 
                     width={100} 
